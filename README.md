@@ -1,5 +1,5 @@
 
-# JustStreamIt - Projet de Classement de Films
+# Application JustStreamIt 
 
 Bienvenue dans le projet **JustStreamIt**, une application web permettant de visualiser en temps réel un classement de films selon leurs notes IMDB. Ce projet a été réalisé dans le cadre d'une mission pour l'association JustStreamIt.
 
@@ -48,19 +48,6 @@ Bienvenue dans le projet **JustStreamIt**, une application web permettant de vis
    ```bash
    cd JustStreamIt
    ```
-3. Créez un environnement virtuel Python :
-   ```bash
-   python -m venv env
-   ```
-4. Activez l'environnement virtuel :
-   - Sur Windows :
-     ```bash
-     .\env\Scripts\activate
-     ```
-   - Sur macOS/Linux :
-     ```bash
-     source env/bin/activate
-     ```
 5. Installez les dépendances nécessaires pour l'API locale OCMovies (voir le fichier README de l'API).
 6. Lancez le serveur de l'API locale :
    ```bash
