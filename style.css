@@ -1,0 +1,377 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+header {
+    background: #4a4a4a;
+    color: white;
+    padding: 20px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #222;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Section Meilleur Film */
+.meilleur-film {
+    margin-bottom: 40px;
+}
+
+.meilleur-film h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.meilleur-film .film {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%
+}
+
+.meilleur-film img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    flex: 0 0 350px;
+}
+
+.meilleur-film .film-details {
+    flex: 1;
+    min-width: 200px;
+}
+
+.meilleur-film .film-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.meilleur-film .film-presentation p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.meilleur-film .details-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.meilleur-film .details-btn:hover {
+    background-color: #e64a19;
+}
+
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .films-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .films-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Film Card */
+.film-card {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.film-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.film-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.film-card .film-overlay {
+    position: absolute;
+    bottom: 230px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .film-card .film-overlay {
+        bottom: 0;
+        padding: 15px;
+    }
+}
+
+.film-card .film-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+
+.film-card .details-btn {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: auto;
+}
+
+.film-card .details-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Catégorie Libre */
+.categorie-libre select {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* modal window style */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Contenu de la modale */
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Header avec image et détails */
+.modal-header {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-header img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-details {
+    flex: 1;
+}
+
+.modal-details h3 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: bold;
+    color: #222;
+}
+
+.modal-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Corps de la modale */
+.modal-body {
+    margin-top: 10px;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Liste des acteurs */
+.modal-actors {
+    margin-top: 20px;
+}
+
+.modal-actors p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Pied de page */
+.modal-footer {
+    text-align: center;
+}
+
+.modal-footer .btn-primary {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #e64a19;
+}
+
+/* Responsive for tablet & mobile */
+@media (max-width: 1024px) {
+    .modal-content {
+        max-width: 600px;
+        max-height: 90%;
+        flex-direction: column-reverse;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    .modal-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .modal-header img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    .modal-details {
+        text-align: center;
+    }
+
+    .modal-body {
+        text-align: center;
+    }
+
+    .modal-footer {
+        margin-top: 20px;
+    }
+}
+
+
+.voir-plus-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Films visibles par défaut */
+.films-grid .film-card {
+    display: none; /* Par défaut, cacher tous les films */
+}
+
+/* Version ordinateur : 6 films visibles */
+@media (min-width: 1024px) {
+    .films-grid .film-card:nth-child(-n+6) {
+        display: block;
+    }
+}
+
+/* Version tablette : 4 films visibles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .films-grid .film-card:nth-child(-n+4) {
+        display: block;
+    }
+}
+
+/* Version mobile : 2 films visibles */
+@media (max-width: 767px) {
+    .films-grid .film-card:nth-child(-n+2) {
+        display: block;
+    }
+}

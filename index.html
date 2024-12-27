@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustStreamIt - Films à la demande</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>JustStreamIt - Vidéos à la demande</h1>
+    </header>
+
+    <main>
+        <!-- Section for the best film -->
+        <section class="meilleur-film">
+            <h2>Meilleur film</h2>
+            <div class="film"></div>
+        </section>
+
+        <!-- Section for best rated films -->
+        <section id="top-rated-films" class="top-rated-films">
+            <h2>Films les mieux notés</h2>
+            <div class="films-grid"></div>
+            <button class="voir-plus-btn">Voir plus</button>
+        </section>
+
+        <!-- Section for comedy films -->
+        <section id="comedy-category" class="categorie">
+            <h2>Comedies</h2>
+            <div class="films-grid"></div>
+            <button class="voir-plus-btn">Voir plus</button>
+        </section>
+
+         <!-- Section for Sci-Fi films -->
+        <section id="sci-fi-category" class="categorie">
+            <h2>Sciences-Fiction</h2>
+            <div class="films-grid"></div>
+            <button class="voir-plus-btn">Voir plus</button>
+        </section>
+
+        <!-- Section for a chosen category -->
+        <section class="categorie-libre">
+            <h2>Autres Catégories</h2>
+            <select id="category-select"></select>
+            <div class="films-grid"></div>
+            <button class="voir-plus-btn">Voir plus</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JustStreamIt</p>
+    </footer>
+
+    <!-- Modal for movie detail -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img id="modal-poster" src="https://via.placeholder.com/300x450?text=No+Image" alt="Affiche du film" class="poster">
+                <div class="modal-details">
+                    <h3 id="modal-title">" "</h3>
+                    <p id="modal-meta"></p>
+                    <p><strong>IMDB score:</strong> <span id="modal-score"></span></p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p><strong>Date de sortie:</strong> <span id="modal-release"></span></p>
+                <p><strong>Classification:</strong> <span id="modal-classification"></span></p>
+                <p><strong>Réalisé par:</strong> <span id="modal-director"></span></p>
+                <p><strong>Avec:</strong> <span id="modal-actors"></span></p>
+                <p><strong>Durée:</strong> <span id="modal-duration"></span></p>
+                <p><strong>Pays d'origine:</strong> <span id="modal-country"></span></p>
+                <p><strong>Recettes au box-office:</strong> <span id="modal-boxoffice"></span></p>
+                <p><strong>Résumé:</strong> <span id="modal-summary"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="close-button btn-primary">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
